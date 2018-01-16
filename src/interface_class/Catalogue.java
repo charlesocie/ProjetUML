@@ -5,35 +5,43 @@ import java.util.Arrays;
 import java.util.List;
 
 import DAO.I_ProduitDAO;
-import DAO.ProduitDAO;
-import DAO.ProduitFactory;
+import DAO.SQLFactory;
+import DAO.XMLFactory;
 
 
 public class Catalogue implements I_Catalogue {
-	
-	List<I_Produit> listProduits = new ArrayList<I_Produit>();
-	private I_ProduitDAO c = ProduitFactory.createProduit();
 
-	public Catalogue() {
-		//int nbligne = c.compterLigne();
-		List<I_Produit> listeid = new ArrayList<I_Produit>();
-		listeid.addAll(c.findAll());
-		if(listeid.size()!=0){
-			for(int i=0; i<listeid.size() ; i++){
-				String nom = listeid.get(i).getNom();
-				int qte = listeid.get(i).getQuantite();
-				double prix = listeid.get(i).getPrixUnitaireHT();
-				I_Produit produit = new Produit(nom, prix, qte);
-				this.addProduit(produit);
-			}
-		}
+	String nom;
+	List<I_Produit> listProduits = new ArrayList<I_Produit>();
+	SQLFactory factory = new SQLFactory();
+	private I_ProduitDAO c = factory.createProduit();
+
+	public Catalogue(String nom) {
+		this.nom = nom;
+        LoadCatalogue();
+	}
+
+    public void LoadCatalogue() {
+        List<I_Produit> listeid = new ArrayList<I_Produit>();
+        listeid.addAll(c.findAll());
+        if(listeid.size()!=0){
+            for(int i=0; i<listeid.size() ; i++){
+                String nomp = listeid.get(i).getNom();
+                int qte = listeid.get(i).getQuantite();
+                double prix = listeid.get(i).getPrixUnitaireHT();
+                I_Produit produit = new Produit(nomp, prix, qte);
+                this.addProduit(produit);
+            }
+        }
+    }
+
+    public Catalogue(I_Produit produit, String nom) {
+		this.nom = nom;
+	    this.listProduits.add(produit);
 	}
 	
-	public Catalogue(I_Produit produit) {
-		this.listProduits.add(produit);
-	}
-	
-	public Catalogue(I_Produit [] produit) {
+	public Catalogue(I_Produit [] produit, String nom) {
+        this.nom = nom;
 		for(int i = 0; i<produit.length; i++) {
 			this.listProduits.add(produit[i]);
 		}
@@ -246,5 +254,10 @@ public class Catalogue implements I_Catalogue {
 	public void clear() {
 		this.listProduits.clear();
 	}
+
+    @Override
+    public String getNom() {
+        return this.nom;
+    }
 
 }

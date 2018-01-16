@@ -14,23 +14,17 @@ import interface_class.Produit;
 public class ProduitDAO implements I_ProduitDAO {
 
 	private Statement st = null;
-	private Connection cn = null;
+	private  Connection cn;
 	private ResultSet rs;
 
-	public ProduitDAO() {
+	public ProduitDAO(Connection cn) {
+		this.cn = cn;
 		try {
-			String url = "jdbc:oracle:thin:@162.38.222.149:1521:iut";
-			String login = "bertrandf";
-			String mdp = "1108019010P";
-
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			cn = DriverManager.getConnection(url, login, mdp);
-			st = cn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
+			st = this.cn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+
 	}
 	
 	public boolean create(I_Produit produit) {
