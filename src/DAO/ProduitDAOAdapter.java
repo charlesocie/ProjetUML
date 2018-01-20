@@ -27,8 +27,11 @@ public class ProduitDAOAdapter implements I_ProduitDAO {
         return dao.maj(produit);
     }
 
-
     @Override
+    public List<I_Produit> findAll(int idcat) {
+        return null;
+    }
+
     public List<I_Produit> findAll() {
         return dao.lireTous();
     }

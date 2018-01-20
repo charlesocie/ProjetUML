@@ -25,9 +25,9 @@ public class CatalogueDAO implements I_CatalogueDAO{
     }
 
     @Override
-    public boolean create(I_Catalogue catalogue) {
+    public boolean create(String  catalogue) {
         try {
-            String sql = "call nouveauCatalogue('" + catalogue.getNom() + "')";
+            String sql = "call nouveauCatalogueObjet('" + catalogue + "')";
             return (st.executeUpdate(sql) != 0);
         }
         catch(SQLException e) {
@@ -36,9 +36,9 @@ public class CatalogueDAO implements I_CatalogueDAO{
     }
 
     @Override
-    public boolean supprimer(I_Catalogue catalogue) {
+    public boolean supprimer(String catalogue) {
         try{
-            String sql = "DELETE FROM Catalogue WHERE nom = '"+ catalogue.getNom() +"'" ;
+            String sql = "DELETE FROM CatalogueObjet WHERE nomcat = '"+ catalogue +"'" ;
             return (st.executeUpdate(sql) != 0);
         }
         catch(SQLException e) {
@@ -47,13 +47,18 @@ public class CatalogueDAO implements I_CatalogueDAO{
     }
 
     @Override
-    public List<I_Catalogue> findAll() {
+    public List<String> findAll(boolean avecProduit) {
         try {
-            String sql = "SELECT * FROM Catalogue ";
-            List<I_Catalogue> listecat = new ArrayList<I_Catalogue>();
+            String sql = "SELECT * FROM CatalogueObjet order by nomcat ";
+            List<String> listecat = new ArrayList<String >();
             rs = st.executeQuery(sql);
+            String cat;
             while(rs.next()){
-                Catalogue cat = new Catalogue(rs.getString(2));
+                if (avecProduit == true) {
+                   cat = rs.getString(2) + " : " + rs.getInt(3) + " produits";
+                }
+                else
+                    cat = rs.getString(2);
                 listecat.add(cat);
             }
 

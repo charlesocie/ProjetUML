@@ -14,7 +14,7 @@ public interface I_ProduitDAO {
 
     //public abstract boolean listeProduit();
 
-    public abstract List<I_Produit> findAll();
+    public abstract List<I_Produit> findAll(int idcat);
 
     /*public abstract String getNomProduits(int i);
 

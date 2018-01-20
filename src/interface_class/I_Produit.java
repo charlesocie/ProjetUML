@@ -8,6 +8,7 @@ public interface I_Produit {
 	public abstract double getPrixUnitaireHT();
 	public abstract double getPrixUnitaireTTC();
 	public abstract double getPrixStockTTC();
+	public abstract int getidcat();
 	public abstract String toString();
 
 }

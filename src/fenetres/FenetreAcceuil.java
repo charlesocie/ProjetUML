@@ -1,4 +1,7 @@
 package fenetres;
+import controleurs.ControleurCatalogue;
+import controleurs.ControleurGeneral;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -10,8 +13,12 @@ public class FenetreAcceuil extends JFrame implements ActionListener {
     private JLabel lbNbCatalogues;
     private JComboBox cmbSupprimer, cmbSelectionner;
     private TextArea taDetailCatalogues;
+    ControleurCatalogue CC;
+    private String[] tab;
 
     public FenetreAcceuil() {
+
+        CC = new ControleurCatalogue();
         setTitle("Catalogues");
         setBounds(500, 500, 200, 125);
         Container contentPane = getContentPane();
@@ -75,29 +82,41 @@ public class FenetreAcceuil extends JFrame implements ActionListener {
         btSupprimer.addActionListener(this);
         btSelectionner.addActionListener(this);
 
-        String[] tab  = {"Formacia" , "Le Redoutable", "Noitaicossa"};
+        tab  = CC.listeCatalogueAvecouSansProduit(false) ;
+        this.modifierNbCatalogues(tab.length);
         modifierListesCatalogues(tab);
-        String[] tab2 = {"Formacia : 6 produits" , "Le Redoutable : 4 produits" , "Noitaicossa : 0 produits" };
+        String[] tab2 = CC.listeCatalogueAvecouSansProduit(true) ;
         modifierDetailCatalogues(tab2);
-        modifierNbCatalogues(3);
         setVisible(true);
     }
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btAjouter)
         {
+            boolean catexiste = false;
             String texteAjout = txtAjouter.getText();
-            if (!texteAjout.equals(""))
+            for( int i = 0 ; i<tab.length ; i++){
+                if(tab[i].equals(texteAjout)){
+                    catexiste = true;
+                }
+            }
+            if (catexiste == false)
             {
-                System.out.println("ajouter le catalogue "+texteAjout);
+                CC.ajoutCat(texteAjout);
                 txtAjouter.setText(null);
+                JOptionPane.showMessageDialog(null,texteAjout +" créée");
+
+            }
+            else {
+                JOptionPane.showMessageDialog(null,texteAjout +" existe déja");
             }
         }
         if (e.getSource() == btSupprimer)
         {
             String texteSupprime = (String)cmbSupprimer.getSelectedItem();
             if (texteSupprime != null)
-                System.out.println("supprime catalogue "+texteSupprime);
+                CC.suppressionCat(texteSupprime);
+                JOptionPane.showMessageDialog(null,texteSupprime +" supprimé");
         }
         if (e.getSource() == btSelectionner)
         {
@@ -105,9 +124,16 @@ public class FenetreAcceuil extends JFrame implements ActionListener {
             if (texteSelection != null)
             {
                 System.out.println("selectionne catalogue "+texteSelection);
+                new FenetrePrincipale("aa");
                 this.dispose();
             }
         }
+        String[] tab  = CC.listeCatalogueAvecouSansProduit(false) ;
+        this.modifierNbCatalogues(tab.length);
+        modifierListesCatalogues(tab);
+        String[] tab2 = CC.listeCatalogueAvecouSansProduit(true) ;
+        modifierDetailCatalogues(tab2);
+        setVisible(true);
     }
 
     private void modifierListesCatalogues(String[] nomsCatalogues) {

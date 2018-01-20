@@ -8,6 +8,7 @@ public class Produit implements I_Produit {
 	String nom;
 	double prixUnitaireHT;
 	double tauxTVA;
+	int idcat;
 	
 	
 	public Produit(String nom, double prixUnitaireHT, int quantiteStock) {
@@ -17,11 +18,12 @@ public class Produit implements I_Produit {
 			this.tauxTVA = 20;
 	}
 	
-	public Produit(String nom, double prixUnitaireHT, int quantiteStock, double tauxTVA) {
+	public Produit(String nom, double prixUnitaireHT, int quantiteStock, double tauxTVA, int idcat) {
 			this.quantiteStock = quantiteStock;
 			this.nom = nom;
 			this.prixUnitaireHT = prixUnitaireHT;
 			this.tauxTVA = tauxTVA;
+			this.idcat = idcat;
 	}
 
 	@Override
@@ -69,7 +71,13 @@ public class Produit implements I_Produit {
 		double PrixStockTTC = this.getPrixUnitaireTTC() * this.quantiteStock;
 		return PrixStockTTC;
 	}
-	
+
+	@Override
+	public int getidcat() {
+		return idcat;
+	}
+
+
 	public String toString() {
 		final NumberFormat instance = NumberFormat.getNumberInstance();
 		instance.setMinimumFractionDigits(2);

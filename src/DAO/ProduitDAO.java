@@ -29,7 +29,7 @@ public class ProduitDAO implements I_ProduitDAO {
 	
 	public boolean create(I_Produit produit) {
 		try {
-			String sql = "call nouveauProduit('" + produit.getNom() + "' , " + String.valueOf(produit.getQuantite()) + ", " +  String.valueOf(produit.getPrixUnitaireHT()) + ")";
+			String sql = "call nouveauProduitObjet(" + String.valueOf(produit.getQuantite()) + "'" + produit.getNom() + "', " +  String.valueOf(produit.getPrixUnitaireHT()) + "," + String.valueOf(produit.getidcat()) + ")";
 			return (st.executeUpdate(sql) != 0);
 		}
 		catch(SQLException e) {
@@ -39,7 +39,7 @@ public class ProduitDAO implements I_ProduitDAO {
 
 	public boolean supprimer(I_Produit produit){
 		try{
-			String sql = "DELETE FROM Produit WHERE nom = '"+ produit.getNom() +"'" ;
+			String sql = "DELETE FROM ProduitObjet WHERE nom = '"+ produit.getNom() +"' AND idcat = " + String.valueOf(produit.getidcat()) ;
 			return (st.executeUpdate(sql) != 0);
 		}
 		catch(SQLException e) {
@@ -49,7 +49,7 @@ public class ProduitDAO implements I_ProduitDAO {
 
 	public boolean gestionStockProduit(I_Produit produit){
 		try{
-			String sql = "UPDATE Produit SET quantitestock = " + String.valueOf(produit.getQuantite()) + " WHERE nom = '" + produit.getNom() + "'" ;
+			String sql = "UPDATE ProduitObjet SET quantitestock = " + String.valueOf(produit.getQuantite()) + " WHERE nom = '" + produit.getNom() + "'  AND idcat = " + String.valueOf(produit.getidcat()) ;
 			return (st.executeUpdate(sql) != 0);
 		}
 		catch(SQLException e) {
@@ -82,9 +82,9 @@ public class ProduitDAO implements I_ProduitDAO {
 	}*/
 
 
-	public List<I_Produit>findAll(){
+	public List<I_Produit>findAll(int catid){
 		try {
-			String sql = "SELECT * FROM Produit ";
+			String sql = "SELECT * FROM ProduitObjet WHERE idcat = " + catid;
 			List<I_Produit> listeproduit = new ArrayList<I_Produit>();
 			rs = st.executeQuery(sql);
 			while(rs.next()){

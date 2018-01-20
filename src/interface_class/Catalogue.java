@@ -23,7 +23,7 @@ public class Catalogue implements I_Catalogue {
 
     public void LoadCatalogue() {
         List<I_Produit> listeid = new ArrayList<I_Produit>();
-        listeid.addAll(c.findAll());
+        listeid.addAll(c.findAll(22));
         if(listeid.size()!=0){
             for(int i=0; i<listeid.size() ; i++){
                 String nomp = listeid.get(i).getNom();

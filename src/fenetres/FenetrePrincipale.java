@@ -4,6 +4,7 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
+import controleurs.ControleurCatalogue;
 import controleurs.ControleurGeneral;
 
 
@@ -11,7 +12,7 @@ import controleurs.ControleurGeneral;
 public class FenetrePrincipale extends JFrame implements ActionListener,
 		WindowListener {
 
-	ControleurGeneral CG = new ControleurGeneral();
+	ControleurGeneral CG;
 	private JButton btAfficher;
 	private JButton btNouveauProduit;
 	private JButton btSupprimerProduit;
@@ -22,8 +23,9 @@ public class FenetrePrincipale extends JFrame implements ActionListener,
 	private JButton btQuitter;
 
 	
-	public FenetrePrincipale() {
-		
+	public FenetrePrincipale(String nom) {
+
+		this.CG = new ControleurGeneral(nom);
 		setTitle("exercice Produits");
 		setBounds(500, 500, 320, 250);
 		JPanel panAffichage = new JPanel();
@@ -113,7 +115,6 @@ public class FenetrePrincipale extends JFrame implements ActionListener,
 	
 	
 	public static void main(String[] args) {
-		new FenetrePrincipale();
 	}
 
 }
