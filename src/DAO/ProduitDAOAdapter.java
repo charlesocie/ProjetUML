@@ -4,7 +4,7 @@ import interface_class.I_Produit;
 
 import java.util.List;
 
-public class ProduitDAOAdapter implements I_ProduitDAO {
+public class ProduitDAOAdapter  implements I_ProduitDAO {
 
     private ProduitDAO_XML dao;
 
@@ -18,17 +18,27 @@ public class ProduitDAOAdapter implements I_ProduitDAO {
     }
 
     @Override
+    public boolean supprimer(I_Produit produit, int id) {
+        return false;
+    }
+
+    @Override
+    public boolean gestionStockProduit(I_Produit produit, int id) {
+        return false;
+    }
+
+
     public boolean supprimer(I_Produit produit) {
         return dao.supprimer(produit);
     }
 
-    @Override
+
     public boolean gestionStockProduit(I_Produit produit) {
         return dao.maj(produit);
     }
 
     @Override
-    public List<I_Produit> findAll(int idcat) {
+    public List<I_Produit> findAll(String  idcat) {
         return null;
     }
 

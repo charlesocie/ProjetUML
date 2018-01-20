@@ -12,18 +12,20 @@ import DAO.XMLFactory;
 public class Catalogue implements I_Catalogue {
 
 	String nom;
+	int id;
 	List<I_Produit> listProduits = new ArrayList<I_Produit>();
 	SQLFactory factory = new SQLFactory();
 	private I_ProduitDAO c = factory.createProduit();
 
-	public Catalogue(String nom) {
+	public Catalogue(String nom, int id) {
 		this.nom = nom;
+		this.id = id;
         LoadCatalogue();
 	}
 
     public void LoadCatalogue() {
         List<I_Produit> listeid = new ArrayList<I_Produit>();
-        listeid.addAll(c.findAll(22));
+        listeid.addAll(c.findAll(nom));
         if(listeid.size()!=0){
             for(int i=0; i<listeid.size() ; i++){
                 String nomp = listeid.get(i).getNom();
@@ -60,7 +62,7 @@ public class Catalogue implements I_Catalogue {
 					}
 			}
 			if(produit.getPrixUnitaireHT() > 0 && produit.getQuantite() >= 0 && !doublenom){
-				c.create(produit);
+
 				this.listProduits.add(produit);
 				return true;
 			}
@@ -87,6 +89,7 @@ public class Catalogue implements I_Catalogue {
 			}
 			I_Produit produit = new Produit(tabnom, prix, qte);
 			if(produit.getPrixUnitaireHT() > 0 && produit.getQuantite() >= 0 && !doublenom){
+				produit.setidcat(id);
 				c.create(produit);
 				this.listProduits.add(produit);
 				return true;
@@ -135,7 +138,7 @@ public class Catalogue implements I_Catalogue {
 		try {
 			for(int i = 0; i<this.listProduits.size(); i++) {
 				if (this.listProduits.get(i).getNom() == nom) {
-					c.supprimer(this.listProduits.get(i));
+					c.supprimer(this.listProduits.get(i), this.id);
 					this.listProduits.remove(this.listProduits.get(i));
 					return true;
 				}
@@ -144,9 +147,7 @@ public class Catalogue implements I_Catalogue {
 		}
 		catch(Exception e) {
 			System.out.println(e);
-			/*jop1 = new JOptionPane();
-			jop1.showMessageDialog(null, "Message informatif", "Information", JOptionPane.INFORMATION_MESSAGE);
-			*/return false;
+			return false;
 		}
 	}
 
@@ -157,7 +158,7 @@ public class Catalogue implements I_Catalogue {
 				for(int i = 0; i<this.listProduits.size(); i++) {
 					if(this.listProduits.get(i).getNom().equals(nomProduit) == true) {
 						this.listProduits.get(i).ajouter(qteAchetee);
-						c.gestionStockProduit(this.listProduits.get(i));
+						c.gestionStockProduit(this.listProduits.get(i), this.id	);
 						return true;
 					}
 				}
@@ -185,7 +186,7 @@ public class Catalogue implements I_Catalogue {
 				}
 				if(this.listProduits.get(i).getNom().equals(nomProduit) && this.listProduits.get(i).getQuantite() >= qteVendue){
 					this.listProduits.get(i).enlever(qteVendue);
-					c.gestionStockProduit(this.listProduits.get(i));
+					c.gestionStockProduit(this.listProduits.get(i), this.id);
 					return true;
 				}
 			}
@@ -193,9 +194,7 @@ public class Catalogue implements I_Catalogue {
 		}
 		catch(Exception e) {
 			System.out.println(e);
-			/*jop1 = new JOptionPane();
-			jop1.showMessageDialog(null, "Message informatif", "Information", JOptionPane.INFORMATION_MESSAGE);
-			*/return false;
+			return false;
 		}
 	}
 
@@ -213,9 +212,7 @@ public class Catalogue implements I_Catalogue {
 		}
 		catch(Exception e) {
 			System.out.println(e);
-			/*jop1 = new JOptionPane();
-			jop1.showMessageDialog(null, "Message informatif", "Information", JOptionPane.INFORMATION_MESSAGE);
-			*/return null;
+			return null;
 		}
 	}
 
@@ -231,9 +228,7 @@ public class Catalogue implements I_Catalogue {
 		}
 		catch(Exception e) {
 			System.out.println(e);
-			/*jop1 = new JOptionPane();
-			jop1.showMessageDialog(null, "Message informatif", "Information", JOptionPane.INFORMATION_MESSAGE);
-			*/return 0;
+			return 0;
 		}
 	}
 	

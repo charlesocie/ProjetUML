@@ -8,7 +8,7 @@ public class Produit implements I_Produit {
 	String nom;
 	double prixUnitaireHT;
 	double tauxTVA;
-	int idcat;
+	int idcat = 0;
 	
 	
 	public Produit(String nom, double prixUnitaireHT, int quantiteStock) {
@@ -16,14 +16,6 @@ public class Produit implements I_Produit {
 			this.nom = nom;
 			this.prixUnitaireHT = prixUnitaireHT;
 			this.tauxTVA = 20;
-	}
-	
-	public Produit(String nom, double prixUnitaireHT, int quantiteStock, double tauxTVA, int idcat) {
-			this.quantiteStock = quantiteStock;
-			this.nom = nom;
-			this.prixUnitaireHT = prixUnitaireHT;
-			this.tauxTVA = tauxTVA;
-			this.idcat = idcat;
 	}
 
 	@Override
@@ -86,6 +78,11 @@ public class Produit implements I_Produit {
 		String Produit = null;
 			Produit = this.getNom() + " - prix HT : " + instance.format(this.getPrixUnitaireHT())+ " € - prix TTC : " + instance.format(this.getPrixUnitaireTTC()) + " € - quantité en stock : " + this.getQuantite() + "\n";
 		return Produit;
+	}
+
+	@Override
+	public void setidcat(int idcat) {
+		this.idcat = idcat;
 	}
 
 }

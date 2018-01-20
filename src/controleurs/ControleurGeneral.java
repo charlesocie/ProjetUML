@@ -9,13 +9,12 @@ public class ControleurGeneral {
 	private ControleurCRUDProduit CCRUDP;
 	private ControleurEtatStock CES;
 	
-	public ControleurGeneral(String nom){
+	public ControleurGeneral(String nom, int id){
 		
-		I_Catalogue cat = new Catalogue(nom);
+		I_Catalogue cat = new Catalogue(nom, id);
 		setCAVP(new ControleurAchatVenteProduit(cat));
 		setCCRUDP(new ControleurCRUDProduit(cat));
 		setCES(new ControleurEtatStock(cat));
-		
 		}
 	
 

@@ -29,7 +29,7 @@ public class ProduitDAO implements I_ProduitDAO {
 	
 	public boolean create(I_Produit produit) {
 		try {
-			String sql = "call nouveauProduitObjet(" + String.valueOf(produit.getQuantite()) + "'" + produit.getNom() + "', " +  String.valueOf(produit.getPrixUnitaireHT()) + "," + String.valueOf(produit.getidcat()) + ")";
+			String sql = "call nouveauProduitObjet(" + String.valueOf(produit.getQuantite()) + ", '" + produit.getNom() + "', " +  String.valueOf(produit.getPrixUnitaireHT()) + "," + String.valueOf(produit.getidcat()) + ")";
 			return (st.executeUpdate(sql) != 0);
 		}
 		catch(SQLException e) {
@@ -37,9 +37,9 @@ public class ProduitDAO implements I_ProduitDAO {
 		}
 	}
 
-	public boolean supprimer(I_Produit produit){
+	public boolean supprimer(I_Produit produit, int id){
 		try{
-			String sql = "DELETE FROM ProduitObjet WHERE nom = '"+ produit.getNom() +"' AND idcat = " + String.valueOf(produit.getidcat()) ;
+			String sql = "DELETE FROM ProduitObjet WHERE nom = '"+ produit.getNom() +"' AND idcat = " + String.valueOf(id) ;
 			return (st.executeUpdate(sql) != 0);
 		}
 		catch(SQLException e) {
@@ -47,9 +47,10 @@ public class ProduitDAO implements I_ProduitDAO {
 		}
 	}
 
-	public boolean gestionStockProduit(I_Produit produit){
+	public boolean gestionStockProduit(I_Produit produit, int id){
 		try{
-			String sql = "UPDATE ProduitObjet SET quantitestock = " + String.valueOf(produit.getQuantite()) + " WHERE nom = '" + produit.getNom() + "'  AND idcat = " + String.valueOf(produit.getidcat()) ;
+			String sql = "UPDATE ProduitObjet SET quantitesstock = " + String.valueOf(produit.getQuantite()) + " WHERE nom = '" + produit.getNom() + "'  AND idcat = " + String.valueOf(id) ;
+			System.out.println(sql);
 			return (st.executeUpdate(sql) != 0);
 		}
 		catch(SQLException e) {
@@ -82,13 +83,14 @@ public class ProduitDAO implements I_ProduitDAO {
 	}*/
 
 
-	public List<I_Produit>findAll(int catid){
+	public List<I_Produit>findAll(String nomcat){
 		try {
-			String sql = "SELECT * FROM ProduitObjet WHERE idcat = " + catid;
+			String sql = "SELECT * FROM ProduitObjet NATURAL JOIN CatalogueObjet where nomcat = '" + nomcat + "'";
 			List<I_Produit> listeproduit = new ArrayList<I_Produit>();
 			rs = st.executeQuery(sql);
 			while(rs.next()){
-				Produit p = new Produit(rs.getString(3),  rs.getDouble(4), rs.getInt(2));
+				Produit p = new Produit(rs.getString(4),  rs.getDouble(5), rs.getInt(3));
+				p.setidcat(rs.getInt(1));
 				listeproduit.add(p);
 			}
 

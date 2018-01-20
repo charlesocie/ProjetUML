@@ -69,4 +69,18 @@ public class CatalogueDAO implements I_CatalogueDAO{
             return null;
         }
     }
+
+    @Override
+    public int getid(String nom) {
+        try {
+            String sql = "SELECT idcat FROM CatalogueObjet WHERE nomcat = '" + nom + "'";
+            rs = st.executeQuery(sql);
+            rs.next();
+            return rs.getInt(1);
+        }
+        catch(SQLException e) {
+            return 0;
+        }
+    }
+
 }

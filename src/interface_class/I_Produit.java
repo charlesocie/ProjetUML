@@ -10,5 +10,5 @@ public interface I_Produit {
 	public abstract double getPrixStockTTC();
 	public abstract int getidcat();
 	public abstract String toString();
-
+	public abstract  void setidcat(int idcat);
 }

@@ -105,7 +105,7 @@ public class FenetreAcceuil extends JFrame implements ActionListener {
                 CC.ajoutCat(texteAjout);
                 txtAjouter.setText(null);
                 JOptionPane.showMessageDialog(null,texteAjout +" créée");
-
+                updateWindows();
             }
             else {
                 JOptionPane.showMessageDialog(null,texteAjout +" existe déja");
@@ -117,17 +117,21 @@ public class FenetreAcceuil extends JFrame implements ActionListener {
             if (texteSupprime != null)
                 CC.suppressionCat(texteSupprime);
                 JOptionPane.showMessageDialog(null,texteSupprime +" supprimé");
+                updateWindows();
         }
         if (e.getSource() == btSelectionner)
         {
-            String texteSelection = (String)cmbSupprimer.getSelectedItem();
+            String texteSelection = (String)cmbSelectionner.getSelectedItem();
             if (texteSelection != null)
             {
-                System.out.println("selectionne catalogue "+texteSelection);
-                new FenetrePrincipale("aa");
+                new FenetrePrincipale(texteSelection, CC.getidCat(texteSelection));
+                JOptionPane.showMessageDialog(null," ouverture du Catalogue" + texteSelection + "effectué");
                 this.dispose();
             }
         }
+    }
+
+    private  void updateWindows(){
         String[] tab  = CC.listeCatalogueAvecouSansProduit(false) ;
         this.modifierNbCatalogues(tab.length);
         modifierListesCatalogues(tab);

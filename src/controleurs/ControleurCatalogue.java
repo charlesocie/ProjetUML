@@ -32,4 +32,8 @@ public class ControleurCatalogue {
     public void suppressionCat(String texteSupprime) {
         listCat.supprimer(texteSupprime);
     }
+
+    public int getidCat(String nom) {
+        return listCat.getid(nom);
+    }
 }

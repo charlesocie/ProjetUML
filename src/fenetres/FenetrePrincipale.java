@@ -23,9 +23,9 @@ public class FenetrePrincipale extends JFrame implements ActionListener,
 	private JButton btQuitter;
 
 	
-	public FenetrePrincipale(String nom) {
+	public FenetrePrincipale(String nom, int id) {
 
-		this.CG = new ControleurGeneral(nom);
+		this.CG = new ControleurGeneral(nom, id);
 		setTitle("exercice Produits");
 		setBounds(500, 500, 320, 250);
 		JPanel panAffichage = new JPanel();

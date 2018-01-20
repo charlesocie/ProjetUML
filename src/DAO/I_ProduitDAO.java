@@ -8,13 +8,13 @@ public interface I_ProduitDAO {
 
     public abstract boolean create(I_Produit produit);
 
-    public abstract boolean supprimer(I_Produit produit);
+    public abstract boolean supprimer(I_Produit produit, int id);
 
-    public abstract boolean gestionStockProduit(I_Produit produit);
+    public abstract boolean gestionStockProduit(I_Produit produit, int id);
 
     //public abstract boolean listeProduit();
 
-    public abstract List<I_Produit> findAll(int idcat);
+    public abstract List<I_Produit> findAll(String idcat);
 
     /*public abstract String getNomProduits(int i);
 
