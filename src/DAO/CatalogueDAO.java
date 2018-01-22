@@ -38,7 +38,10 @@ public class CatalogueDAO implements I_CatalogueDAO{
     @Override
     public boolean supprimer(String catalogue) {
         try{
-            String sql = "DELETE FROM CatalogueObjet WHERE nomcat = '"+ catalogue +"'" ;
+            String sql = "call proc_supp_prod('" + this.getid(catalogue) + "')";
+            st.executeUpdate(sql);
+            sql ="DELETE FROM CatalogueObjet WHERE nomcat = '"+ catalogue +"'" ;
+            System.out.println(sql);
             return (st.executeUpdate(sql) != 0);
         }
         catch(SQLException e) {

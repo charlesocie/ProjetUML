@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import DAO.I_Factory;
 import DAO.I_ProduitDAO;
 import DAO.SQLFactory;
 import DAO.XMLFactory;
@@ -11,15 +12,17 @@ import DAO.XMLFactory;
 
 public class Catalogue implements I_Catalogue {
 
-	String nom;
-	int id;
-	List<I_Produit> listProduits = new ArrayList<I_Produit>();
-	SQLFactory factory = new SQLFactory();
-	private I_ProduitDAO c = factory.createProduit();
+	private String nom;
+	private int id;
+	private List<I_Produit> listProduits = new ArrayList<I_Produit>();
+	private I_Factory factory;
+	private I_ProduitDAO c;
 
 	public Catalogue(String nom, int id) {
 		this.nom = nom;
 		this.id = id;
+		factory = new SQLFactory();
+		c = factory.createProduit();
         LoadCatalogue();
 	}
 
@@ -41,7 +44,7 @@ public class Catalogue implements I_Catalogue {
 		this.nom = nom;
 	    this.listProduits.add(produit);
 	}
-	
+
 	public Catalogue(I_Produit [] produit, String nom) {
         this.nom = nom;
 		for(int i = 0; i<produit.length; i++) {
@@ -72,7 +75,7 @@ public class Catalogue implements I_Catalogue {
 			System.out.println(e);
 			return false;
 		}
-		
+
 	}
 
 	@Override
@@ -100,7 +103,7 @@ public class Catalogue implements I_Catalogue {
 			System.out.println(e);
 			return false;
 		}
-		
+
 	}
 
 	@Override
@@ -204,7 +207,7 @@ public class Catalogue implements I_Catalogue {
 		try {
 			String [] tabProduits = new String [this.listProduits.size()];
 			for(int i = 0; i<this.listProduits.size(); i++) {
-				
+
 				tabProduits[i] = this.listProduits.get(i).getNom().replaceAll("	", " ");
 			}
 			Arrays.sort(tabProduits);
@@ -231,13 +234,13 @@ public class Catalogue implements I_Catalogue {
 			return 0;
 		}
 	}
-	
+
 	public String toString() {
 		final NumberFormat instance = NumberFormat.getNumberInstance();
 		instance.setMinimumFractionDigits(2);
 		instance.setMaximumFractionDigits(2);
 		instance.setGroupingUsed(false);
-		String Produit="";
+		String Produit="Catalogue : " + this.nom +"\n";
 		for( int  i = 0 ; i < this.listProduits.size(); i++) {
 			Produit = Produit+this.listProduits.get(i).toString();
 		}

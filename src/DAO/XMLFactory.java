@@ -4,7 +4,7 @@ public class XMLFactory implements I_Factory {
 
     protected XMLFactory(){}
 
-    public static I_ProduitDAO createProduit(){
+    public I_ProduitDAO createProduit(){
         return new ProduitDAOAdapter();
     }
 

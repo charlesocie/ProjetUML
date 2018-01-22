@@ -5,6 +5,8 @@ CREATE TABLE CatalogueObjet(
   CONSTRAINT pk_idcat PRIMARY KEY (idcat)
 );
 
+ALTER TABLE CatalogueObjet ADD CONSTRAINT ck_unique_cat UNIQUE (nomcat);
+
 CREATE TABLE ProduitObjet(
   idproduit NUMBER NOT NULL ,
   quantitesstock NUMBER(38),
@@ -41,6 +43,25 @@ CREATE OR REPLACE PROCEDURE nouveauProduitObjet (
   BEGIN
     INSERT INTO ProduitObjet (idproduit, quantitesstock, nom, prixunitaireht, idcat) VALUES (ma_sequenceprod.NEXTVAL,v_qtestock, v_nom, v_prix, v_idcat);
   END;
+
+
+
+CREATE OR REPLACE FUNCTION fonc_id_cat(v_nomcat IN CatalogueObjet.nomcat%TYPE)
+RETURN NUMBER IS
+  v_idcat NUMBER;
+  BEGIN
+    SELECT  idcat INTO v_idcat
+    FROM CatalogueObjet
+    WHERE nomcat = v_nomcat;
+    RETURN v_idcat;
+  END;
+
+CREATE OR REPLACE PROCEDURE proc_supp_prod(v_idcat IN CatalogueObjet.idcat%TYPE)
+IS
+BEGIN
+  DELETE FROM ProduitObjet
+  WHERE idcat = v_idcat;
+END;
 
 call nouveauCatalogueObjet('lib');
 

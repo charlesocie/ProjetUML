@@ -24,7 +24,7 @@ public class ProduitDAO_XML {
 		}
 	}
 
-	public boolean creer(I_Produit p) {
+	public boolean creerProduit(I_Produit p) {
 		try {
 			Element root = doc.getRootElement();
 			Element prod = new Element("produit");

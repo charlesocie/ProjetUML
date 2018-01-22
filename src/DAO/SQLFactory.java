@@ -22,7 +22,7 @@ public class SQLFactory implements I_Factory {
         }
     }
 
-    public static I_ProduitDAO createProduit(){
+    public I_ProduitDAO createProduit(){
         return new ProduitDAO(cn);
     }
 

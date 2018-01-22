@@ -94,6 +94,7 @@ public class FenetreAcceuil extends JFrame implements ActionListener {
         if (e.getSource() == btAjouter)
         {
             boolean catexiste = false;
+            tab  = CC.listeCatalogueAvecouSansProduit(false) ;
             String texteAjout = txtAjouter.getText();
             for( int i = 0 ; i<tab.length ; i++){
                 if(tab[i].equals(texteAjout)){
@@ -125,7 +126,7 @@ public class FenetreAcceuil extends JFrame implements ActionListener {
             if (texteSelection != null)
             {
                 new FenetrePrincipale(texteSelection, CC.getidCat(texteSelection));
-                JOptionPane.showMessageDialog(null," ouverture du Catalogue" + texteSelection + "effectué");
+                JOptionPane.showMessageDialog(null," ouverture du Catalogue " + texteSelection + " effectué");
                 this.dispose();
             }
         }

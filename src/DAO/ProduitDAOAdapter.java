@@ -14,7 +14,7 @@ public class ProduitDAOAdapter  implements I_ProduitDAO {
 
     @Override
     public boolean create(I_Produit produit) {
-       return dao.creer(produit);
+       return dao.creerProduit(produit);
     }
 
     @Override
