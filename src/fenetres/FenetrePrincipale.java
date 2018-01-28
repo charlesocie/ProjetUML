@@ -11,7 +11,7 @@ import controleurs.ControleurGeneral;
 public class FenetrePrincipale extends JFrame implements ActionListener,
 		WindowListener {
 
-	ControleurGeneral CG = new ControleurGeneral();
+	ControleurGeneral CG;
 	private JButton btAfficher;
 	private JButton btNouveauProduit;
 	private JButton btSupprimerProduit;
@@ -23,7 +23,7 @@ public class FenetrePrincipale extends JFrame implements ActionListener,
 
 	
 	public FenetrePrincipale() {
-		
+		CG = new ControleurGeneral();
 		setTitle("exercice Produits");
 		setBounds(500, 500, 320, 250);
 		JPanel panAffichage = new JPanel();
