@@ -5,9 +5,9 @@ import java.sql.*;
 public class SQLFactory implements I_Factory {
 
     private static Connection cn;
+    private  static SQLFactory instance;
 
-
-    public SQLFactory(){
+    protected SQLFactory(){
         try {
             String url = "jdbc:oracle:thin:@162.38.222.149:1521:iut";
             String login = "bertrandf";
@@ -28,5 +28,12 @@ public class SQLFactory implements I_Factory {
 
     public I_CatalogueDAO createCatalogue(){
         return  new CatalogueDAO(cn);
+    }
+
+    public synchronized static SQLFactory getInstance(){
+        if(instance == null){
+            instance = new SQLFactory();
+        }
+        return instance;
     }
 }

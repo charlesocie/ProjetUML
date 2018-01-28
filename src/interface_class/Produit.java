@@ -9,8 +9,9 @@ public class Produit implements I_Produit {
 	double prixUnitaireHT;
 	double tauxTVA;
 	int idcat = 0;
-	
-	
+	private String nomcat;
+
+
 	public Produit(String nom, double prixUnitaireHT, int quantiteStock) {
 			this.quantiteStock = quantiteStock;
 			this.nom = nom;
@@ -83,6 +84,16 @@ public class Produit implements I_Produit {
 	@Override
 	public void setidcat(int idcat) {
 		this.idcat = idcat;
+	}
+
+	@Override
+	public void setnomcat(String nom) {
+		this.nomcat = nom;
+	}
+
+	@Override
+	public String getNomCat() {
+		return nomcat;
 	}
 
 }

@@ -50,38 +50,12 @@ public class ProduitDAO implements I_ProduitDAO {
 	public boolean gestionStockProduit(I_Produit produit, int id){
 		try{
 			String sql = "UPDATE ProduitObjet SET quantitesstock = " + String.valueOf(produit.getQuantite()) + " WHERE nom = '" + produit.getNom() + "'  AND idcat = " + String.valueOf(id) ;
-			System.out.println(sql);
 			return (st.executeUpdate(sql) != 0);
 		}
 		catch(SQLException e) {
 			return false;
 		}
 	}
-
-
-	
-	/*public int compterLigne(){
-		try {
-			String sql = "SELECT COUNT(*) FROM Produit";
-			rs = st.executeQuery(sql);
-			rs.next();
-			return rs.getInt(1);
-		}
-		catch(SQLException e) {
-			return 0;
-		}
-	}
-	
-	public boolean listeProduit(){
-		try {
-			String sql = "SELECT * FROM Produit";
-			return (st.executeUpdate(sql) != 0);
-		}
-		catch(SQLException e) {
-			return false;
-		}
-	}*/
-
 
 	public List<I_Produit>findAll(String nomcat){
 		try {
@@ -101,42 +75,4 @@ public class ProduitDAO implements I_ProduitDAO {
 			return null;
 		}
 	}
-
-	/*public String getNomProduits(int i) {
-		try {
-			String sql = "SELECT Nom FROM Produit WHERE idproduit = "+ i;
-			rs = st.executeQuery(sql);
-			rs.next();
-			return rs.getString(1);
-		}
-		catch(SQLException e) {
-			System.out.println(e);
-			return String.valueOf(e);
-		}
-	}
-
-	public int getStockProduit(int i) {
-		try {
-			String sql = "SELECT quantitestock FROM Produit WHERE idproduit = "+ i;
-			rs = st.executeQuery(sql);
-			rs.next();
-			return rs.getInt(1);
-		}
-		catch(SQLException e) {
-			return 0;
-		}		
-	}
-
-	public double getPrixProduit(int i) {
-		try {
-			String sql = "SELECT prixunitaireht FROM Produit WHERE idproduit = "+ i;
-			rs = st.executeQuery(sql);
-			rs.next();
-			return rs.getDouble(1);
-		}
-		catch(SQLException e) {
-			return 0;
-		}	
-	}*/
-	
 }

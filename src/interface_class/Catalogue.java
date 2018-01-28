@@ -18,13 +18,14 @@ public class Catalogue implements I_Catalogue {
 	private I_Factory factory;
 	private I_ProduitDAO c;
 
-	public Catalogue(String nom, int id) {
+	public Catalogue(String nom) {
 		this.nom = nom;
-		this.id = id;
-		factory = new SQLFactory();
+		factory = SQLFactory.getInstance();
 		c = factory.createProduit();
         LoadCatalogue();
 	}
+
+
 
     public void LoadCatalogue() {
         List<I_Produit> listeid = new ArrayList<I_Produit>();
@@ -92,6 +93,7 @@ public class Catalogue implements I_Catalogue {
 			}
 			I_Produit produit = new Produit(tabnom, prix, qte);
 			if(produit.getPrixUnitaireHT() > 0 && produit.getQuantite() >= 0 && !doublenom){
+				produit.setnomcat(nom);
 				produit.setidcat(id);
 				c.create(produit);
 				this.listProduits.add(produit);
@@ -257,5 +259,14 @@ public class Catalogue implements I_Catalogue {
     public String getNom() {
         return this.nom;
     }
+
+	@Override
+	public int getNbProduit() {
+		return listProduits.size();
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 }

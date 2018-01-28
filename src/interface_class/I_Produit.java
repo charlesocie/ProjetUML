@@ -11,4 +11,8 @@ public interface I_Produit {
 	public abstract int getidcat();
 	public abstract String toString();
 	public abstract  void setidcat(int idcat);
+
+    public abstract void setnomcat(String nom);
+
+ 	public abstract String getNomCat();
 }

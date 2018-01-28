@@ -12,13 +12,6 @@ public interface I_ProduitDAO {
 
     public abstract boolean gestionStockProduit(I_Produit produit, int id);
 
-    //public abstract boolean listeProduit();
+    public abstract List<I_Produit> findAll(String nomcat);
 
-    public abstract List<I_Produit> findAll(String idcat);
-
-    /*public abstract String getNomProduits(int i);
-
-    public abstract int getStockProduit(int i);
-
-    public abstract double getPrixProduit(int i);*/
 }

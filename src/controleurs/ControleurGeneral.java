@@ -11,7 +11,8 @@ public class ControleurGeneral {
 	
 	public ControleurGeneral(String nom, int id){
 		
-		I_Catalogue cat = new Catalogue(nom, id);
+		I_Catalogue cat = new Catalogue(nom);
+		cat.setId(id);
 		setCAVP(new ControleurAchatVenteProduit(cat));
 		setCCRUDP(new ControleurCRUDProduit(cat));
 		setCES(new ControleurEtatStock(cat));

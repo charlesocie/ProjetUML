@@ -15,5 +15,7 @@ public interface I_Catalogue {
 
 	public abstract void clear();
 
-    String getNom();
+	public abstract String getNom();
+	public abstract  int getNbProduit();
+	public abstract void setId(int id);
 }
