@@ -3,14 +3,65 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="0.0" y="76.0">controleurs</node>
-    <node x="0.0" y="0.0">interface_class</node>
-    <node x="0.0" y="152.0">fenetres</node>
-    <node x="0.0" y="228.0">DAO</node>
+    <node x="116.42857142857144" y="246.46875">controleurs</node>
+    <node x="50.0" y="125.46875">interface_class</node>
+    <node x="170.42857142857142" y="357.46875">fenetres</node>
+    <node x="57.71428571428571" y="4.46875">DAO</node>
   </nodes>
   <notes />
-  <edges />
-  <settings layout="Hierarchic Group" zoom="1.0" x="0.0" y="0.0" />
+  <edges>
+    <edge source="DAO" target="DAO">
+      <point x="-35.71428571428571" y="15.5" />
+      <point x="84.5" y="65.46875" />
+      <point x="27.714285714285694" y="65.46875" />
+      <point x="27.714285714285694" y="19.96875" />
+      <point x="-62.5" y="-0.0" />
+    </edge>
+    <edge source="fenetres" target="fenetres">
+      <point x="0.0" y="15.5" />
+      <point x="245.42857142857142" y="408.46875" />
+      <point x="150.42857142857142" y="408.46875" />
+      <point x="150.42857142857142" y="372.96875" />
+      <point x="-75.0" y="-0.0" />
+    </edge>
+    <edge source="controleurs" target="controleurs">
+      <point x="-71.66666666666667" y="15.5" />
+      <point x="130.76190476190476" y="297.46875" />
+      <point x="96.42857142857144" y="297.46875" />
+      <point x="96.42857142857144" y="272.3020833333333" />
+      <point x="-86.0" y="10.333333333333329" />
+    </edge>
+    <edge source="DAO" target="interface_class">
+      <point x="53.571428571428584" y="15.5" />
+      <point x="173.78571428571428" y="95.46875" />
+      <point x="219.75" y="95.46875" />
+      <point x="72.75" y="-15.5" />
+    </edge>
+    <edge source="fenetres" target="controleurs">
+      <point x="-50.0" y="-15.5" />
+      <point x="195.42857142857142" y="337.46875" />
+      <point x="216.76190476190476" y="337.46875" />
+      <point x="14.333333333333314" y="15.5" />
+    </edge>
+    <edge source="interface_class" target="DAO">
+      <point x="-24.25" y="-15.5" />
+      <point x="122.75" y="105.46875" />
+      <point x="138.07142857142856" y="105.46875" />
+      <point x="17.85714285714286" y="15.5" />
+    </edge>
+    <edge source="controleurs" target="interface_class">
+      <point x="0.0" y="-15.5" />
+      <point x="55.428571428571445" y="15.5" />
+    </edge>
+    <edge source="interface_class" target="interface_class">
+      <point x="-55.428571428571416" y="15.5" />
+      <point x="91.57142857142858" y="186.46875" />
+      <point x="20.0" y="186.46875" />
+      <point x="20.0" y="144.84375" />
+      <point x="-97.0" y="3.875" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="318.5" y="204.5" />
   <SelectedNodes />
   <Categories />
   <SCOPE>All</SCOPE>
