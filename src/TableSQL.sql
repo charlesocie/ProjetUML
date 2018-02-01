@@ -11,4 +11,3 @@ BEGIN
   INSERT INTO Produit VALUES(seqProduit.nextval,p_quantiteStock,p_nom,p_prixUnitaireHT);
 END;
 
-REVOKE INSERT ON Produit FROM PUBLIC;
