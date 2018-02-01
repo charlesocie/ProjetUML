@@ -41,6 +41,12 @@ public class CatalogueTest2 {
 		I_Produit p1 = createProduit("Mars", 10, 1);
 		assertTrue("ajout un produit", cat.addProduit(p1));
 	}
+
+	@Test
+	public void testAddProduitIProduit_unProduittax() {
+		I_Produit p1 = createProduit("Mars", 10, 1, 10);
+		assertTrue("ajout un produit", cat.addProduit(p1));
+	}
 	
 	@Test
 	public void testAddProduitIProduit_deuxProduits() {
@@ -808,7 +814,14 @@ public class CatalogueTest2 {
 			return new Produit(nom,prixHT,quantite);
 		}
 		catch (Exception e) { return null; }
-	}		
+	}
+
+	private I_Produit createProduit(String nom, double prixHT, int quantite, double tax) {
+		try {
+			return new Produit(nom,prixHT,quantite,tax);
+		}
+		catch (Exception e) { return null; }
+	}
 		
 	
 }

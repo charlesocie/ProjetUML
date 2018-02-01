@@ -15,7 +15,6 @@ public class Catalogue implements I_Catalogue {
 	private I_ProduitDAO c = ProduitFactory.createProduit();
 
 	public Catalogue() {
-		//int nbligne = c.compterLigne();
 		List<I_Produit> listeid = new ArrayList<I_Produit>();
 		listeid.addAll(c.findAll());
 		if(listeid.size()!=0){
