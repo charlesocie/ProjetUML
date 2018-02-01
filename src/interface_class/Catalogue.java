@@ -20,7 +20,6 @@ public class Catalogue implements I_Catalogue {
 
 	public Catalogue(String nom, I_Factory factory) {
 		this.nom = nom;
-		//factory = SQLFactory.getInstance();
 		c = factory.createProduit();
         LoadCatalogue();
 	}

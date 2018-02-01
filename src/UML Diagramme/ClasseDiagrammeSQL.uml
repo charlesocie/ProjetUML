@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="829.375" y="0.0">interface_class.I_Produit</node>
+    <node x="683.3928938356171" y="625.0">controleurs.ControleurCatalogue</node>
+    <node x="520.875" y="242.0">DAO.CatalogueDAO</node>
+    <node x="1625.0604166666667" y="242.0">interface_class.I_Catalogue</node>
+    <node x="1555.1086676451407" y="625.0">fenetres.FenetrePrincipale</node>
+    <node x="753.1428938356171" y="706.0">fenetres.FenetreAcceuil</node>
+    <node x="0.0" y="524.0">DAO.CatalogueDAOAdapteur</node>
+    <node x="1655.0195205479456" y="393.0">controleurs.ControleurEtatStock</node>
+    <node x="691.875" y="242.0">interface_class.Produit</node>
+    <node x="972.3625" y="524.0">fenetres.FenetreNouveauProduit</node>
+    <node x="966.5860241356818" y="242.0">DAO.I_Factory</node>
+    <node x="1551.6086676451407" y="524.0">controleurs.ControleurGeneral</node>
+    <node x="45.38081376386185" y="393.0">DAO.CatalogueDAO_XML</node>
+    <node x="884.5985241356818" y="111.0">DAO.I_ProduitDAO</node>
+    <node x="2118.769520547946" y="524.0">fenetres.FenetreVente</node>
+    <node x="276.94331376386185" y="393.0">DAO.ProduitDAO_XML</node>
+    <node x="1234.1068696999353" y="393.0">controleurs.ControleurCRUDProduit</node>
+    <node x="313.6818696999353" y="625.0">DAO.XMLFactory</node>
+    <node x="1865.0195205479456" y="393.0">controleurs.ControleurAchatVenteProduit</node>
+    <node x="2280.769520547946" y="524.0">fenetres.FenetreAffichage</node>
+    <node x="757.6068696999353" y="524.0">DAO.SQLFactory</node>
+    <node x="1957.7695205479456" y="524.0">fenetres.FenetreAchat</node>
+    <node x="1469.1068696999353" y="393.0">interface_class.Catalogue</node>
+    <node x="453.1308137638619" y="111.0">DAO.I_CatalogueDAO</node>
+    <node x="1207.3625" y="524.0">fenetres.FenetreSuppressionProduit</node>
+    <node x="264.8125" y="524.0">DAO.ProduitDAOAdapter</node>
+    <node x="727.5625" y="393.0">DAO.ProduitDAO</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="DAO.XMLFactory" target="DAO.I_CatalogueDAO">
+      <point x="-25.799999999999955" y="-15.5" />
+      <point x="352.38186969993535" y="595.0" />
+      <point x="243.88081376386185" y="595.0" />
+      <point x="243.88081376386185" y="182.0" />
+      <point x="493.6308137638619" y="182.0" />
+      <point x="-40.5" y="15.5" />
+    </edge>
+    <edge source="controleurs.ControleurAchatVenteProduit" target="interface_class.I_Catalogue">
+      <point x="64.0" y="-15.5" />
+      <point x="2057.019520547946" y="353.0" />
+      <point x="1745.9979166666667" y="353.0" />
+      <point x="56.4375" y="15.5" />
+    </edge>
+    <edge source="fenetres.FenetreAchat" target="controleurs.ControleurAchatVenteProduit">
+      <point x="-35.25" y="-15.5" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="controleurs.ControleurEtatStock" target="interface_class.I_Catalogue">
+      <point x="47.5" y="-15.5" />
+      <point x="1797.5195205479456" y="373.0" />
+      <point x="1713.7479166666667" y="373.0" />
+      <point x="24.1875" y="15.5" />
+    </edge>
+    <edge source="interface_class.I_Catalogue" target="interface_class.I_Produit">
+      <point x="0.0" y="-15.5" />
+      <point x="1689.5604166666667" y="51.0" />
+      <point x="934.2083333333335" y="51.0" />
+      <point x="49.333333333333485" y="15.5" />
+    </edge>
+    <edge source="controleurs.ControleurCatalogue" target="DAO.I_CatalogueDAO">
+      <point x="-72.375" y="-15.5" />
+      <point x="707.5178938356171" y="605.0" />
+      <point x="499.37500000000006" y="605.0" />
+      <point x="499.37500000000006" y="172.0" />
+      <point x="520.6308137638619" y="172.0" />
+      <point x="-13.5" y="15.5" />
+    </edge>
+    <edge source="DAO.XMLFactory" target="DAO.CatalogueDAOAdapteur">
+      <point x="-51.59999999999991" y="-15.5" />
+      <point x="326.5818696999354" y="605.0" />
+      <point x="108.0" y="605.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="DAO.ProduitDAO_XML" target="interface_class.I_Produit">
+      <point x="-42.5" y="-15.5" />
+      <point x="319.44331376386185" y="71.0" />
+      <point x="847.875" y="71.0" />
+      <point x="-37.0" y="15.5" />
+    </edge>
+    <edge source="DAO.ProduitDAO" target="DAO.I_ProduitDAO">
+      <point x="49.875" y="-15.5" />
+      <point x="843.9375" y="323.0" />
+      <point x="867.5683137638619" y="323.0" />
+      <point x="867.5683137638619" y="212.0" />
+      <point x="944.5985241356818" y="212.0" />
+      <point x="-12.0" y="15.5" />
+    </edge>
+    <edge source="controleurs.ControleurCatalogue" target="DAO.I_Factory">
+      <point x="72.375" y="-15.5" />
+      <point x="852.2678938356171" y="605.0" />
+      <point x="950.8625" y="605.0" />
+      <point x="950.8625" y="363.0" />
+      <point x="1014.7110241356818" y="363.0" />
+      <point x="-6.875" y="15.5" />
+    </edge>
+    <edge source="DAO.SQLFactory" target="DAO.I_ProduitDAO">
+      <point x="25.40000000000009" y="-15.5" />
+      <point x="846.5068696999354" y="494.0" />
+      <point x="890.375" y="494.0" />
+      <point x="890.375" y="222.0" />
+      <point x="968.5985241356818" y="222.0" />
+      <point x="12.0" y="15.5" />
+    </edge>
+    <edge source="interface_class.Catalogue" target="DAO.I_ProduitDAO">
+      <point x="-7.375" y="-15.5" />
+      <point x="1520.7318696999353" y="333.0" />
+      <point x="1522.4818696999353" y="333.0" />
+      <point x="1522.4818696999353" y="162.0" />
+      <point x="1016.5985241356818" y="162.0" />
+      <point x="60.0" y="15.5" />
+    </edge>
+    <edge source="fenetres.FenetreAcceuil" target="fenetres.FenetrePrincipale">
+      <point x="50.0" y="-15.5" />
+      <point x="878.1428938356171" y="681.0" />
+      <point x="1639.6086676451407" y="681.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="fenetres.FenetrePrincipale" target="fenetres.FenetreSuppressionProduit">
+      <point x="-31.6875" y="-15.5" />
+      <point x="1607.9211676451407" y="585.0" />
+      <point x="1326.3625" y="585.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="controleurs.ControleurGeneral" target="controleurs.ControleurAchatVenteProduit">
+      <point x="80.66666666666663" y="-15.5" />
+      <point x="1720.2753343118075" y="504.0" />
+      <point x="1956.448091976517" y="504.0" />
+      <point x="-36.571428571428555" y="15.5" />
+    </edge>
+    <edge source="DAO.XMLFactory" target="DAO.ProduitDAOAdapter">
+      <point x="0.0" y="-15.5" />
+      <point x="378.1818696999353" y="605.0" />
+      <point x="359.3125" y="605.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="DAO.ProduitDAOAdapter" target="DAO.ProduitDAO_XML">
+      <point x="-23.625" y="-15.5" />
+      <point x="335.6875" y="504.0" />
+      <point x="319.44331376386185" y="504.0" />
+      <point x="-42.5" y="15.5" />
+    </edge>
+    <edge source="fenetres.FenetrePrincipale" target="fenetres.FenetreAchat">
+      <point x="31.6875" y="-15.5" />
+      <point x="1671.2961676451407" y="585.0" />
+      <point x="2028.2695205479456" y="585.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="DAO.XMLFactory" target="DAO.I_ProduitDAO">
+      <point x="25.800000000000182" y="-15.5" />
+      <point x="403.9818696999355" y="595.0" />
+      <point x="477.37500000000006" y="595.0" />
+      <point x="477.37500000000006" y="202.0" />
+      <point x="920.5985241356818" y="202.0" />
+      <point x="-36.0" y="15.5" />
+    </edge>
+    <edge source="DAO.ProduitDAOAdapter" target="DAO.I_ProduitDAO">
+      <point x="70.875" y="-15.5" />
+      <point x="430.1875" y="504.0" />
+      <point x="466.1308137638619" y="504.0" />
+      <point x="466.1308137638619" y="192.0" />
+      <point x="896.5985241356818" y="192.0" />
+      <point x="-60.0" y="15.5" />
+    </edge>
+    <edge source="DAO.CatalogueDAOAdapteur" target="DAO.CatalogueDAO_XML">
+      <point x="0.0" y="-15.5" />
+      <point x="108.0" y="504.0" />
+      <point x="92.38081376386185" y="504.0" />
+      <point x="-47.0" y="15.5" />
+    </edge>
+    <edge source="fenetres.FenetreSuppressionProduit" target="controleurs.ControleurCRUDProduit">
+      <point x="-59.5" y="-15.5" />
+      <point x="1266.8625" y="504.0" />
+      <point x="1310.5354411285066" y="504.0" />
+      <point x="-30.571428571428555" y="15.5" />
+    </edge>
+    <edge source="DAO.I_ProduitDAO" target="interface_class.I_Produit">
+      <point x="0.0" y="-15.5" />
+      <point x="956.5985241356818" y="91.0" />
+      <point x="884.875" y="91.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="controleurs.ControleurCatalogue" target="DAO.SQLFactory">
+      <point x="-24.125" y="-15.5" />
+      <point x="755.7678938356171" y="585.0" />
+      <point x="821.1068696999353" y="585.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="interface_class.Catalogue" target="interface_class.I_Catalogue">
+      <point x="51.625" y="-15.5" />
+      <point x="1579.7318696999353" y="363.0" />
+      <point x="1665.3729166666667" y="363.0" />
+      <point x="-24.1875" y="15.5" />
+    </edge>
+    <edge source="fenetres.FenetrePrincipale" target="DAO.I_Factory">
+      <point x="-73.9375" y="-15.5" />
+      <point x="1565.6711676451407" y="605.0" />
+      <point x="961.8625" y="605.0" />
+      <point x="961.8625" y="373.0" />
+      <point x="1028.4610241356818" y="373.0" />
+      <point x="6.875" y="15.5" />
+    </edge>
+    <edge source="interface_class.Catalogue" target="interface_class.I_Produit">
+      <point x="22.125" y="-15.5" />
+      <point x="1550.2318696999353" y="323.0" />
+      <point x="1599.7791666666667" y="323.0" />
+      <point x="1599.7791666666667" y="71.0" />
+      <point x="909.5416666666667" y="71.0" />
+      <point x="24.666666666666742" y="15.5" />
+    </edge>
+    <edge source="fenetres.FenetrePrincipale" target="controleurs.ControleurGeneral">
+      <point x="-10.5625" y="-15.5" />
+      <point x="1629.0461676451407" y="575.0" />
+      <point x="1595.6086676451407" y="575.0" />
+      <point x="-44.0" y="15.5" />
+    </edge>
+    <edge source="controleurs.ControleurGeneral" target="controleurs.ControleurEtatStock">
+      <point x="36.66666666666663" y="-15.5" />
+      <point x="1676.2753343118075" y="474.0" />
+      <point x="1813.3528538812789" y="474.0" />
+      <point x="63.33333333333337" y="15.5" />
+    </edge>
+    <edge source="DAO.ProduitDAOAdapter" target="interface_class.I_Produit">
+      <point x="-70.875" y="-15.5" />
+      <point x="288.4375" y="504.0" />
+      <point x="266.44331376386185" y="504.0" />
+      <point x="266.44331376386185" y="61.0" />
+      <point x="835.5416666666667" y="61.0" />
+      <point x="-49.33333333333326" y="15.5" />
+    </edge>
+    <edge source="controleurs.ControleurGeneral" target="interface_class.I_Catalogue">
+      <point x="-7.3333333333332575" y="-15.5" />
+      <point x="1632.2753343118075" y="444.0" />
+      <point x="1644.5195205479456" y="444.0" />
+      <point x="1644.5195205479456" y="373.0" />
+      <point x="1681.4979166666667" y="373.0" />
+      <point x="-8.0625" y="15.5" />
+    </edge>
+    <edge source="DAO.CatalogueDAOAdapteur" target="DAO.I_CatalogueDAO">
+      <point x="-72.0" y="-15.5" />
+      <point x="36.0" y="504.0" />
+      <point x="34.88081376386185" y="504.0" />
+      <point x="34.88081376386185" y="172.0" />
+      <point x="466.6308137638619" y="172.0" />
+      <point x="-67.5" y="15.5" />
+    </edge>
+    <edge source="fenetres.FenetrePrincipale" target="fenetres.FenetreAffichage">
+      <point x="73.9375" y="-15.5" />
+      <point x="1713.5461676451407" y="605.0" />
+      <point x="2364.769520547946" y="605.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="DAO.I_Factory" target="DAO.I_CatalogueDAO">
+      <point x="-27.5" y="-15.5" />
+      <point x="994.0860241356818" y="182.0" />
+      <point x="601.6308137638619" y="182.0" />
+      <point x="67.5" y="15.5" />
+    </edge>
+    <edge source="fenetres.FenetrePrincipale" target="fenetres.FenetreVente">
+      <point x="52.8125" y="-15.5" />
+      <point x="1692.4211676451407" y="595.0" />
+      <point x="2189.769520547946" y="595.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="DAO.ProduitDAO" target="interface_class.I_Produit">
+      <point x="16.625" y="-15.5" />
+      <point x="810.6875" y="373.0" />
+      <point x="802.375" y="373.0" />
+      <point x="802.375" y="91.0" />
+      <point x="872.5416666666667" y="91.0" />
+      <point x="-12.333333333333258" y="15.5" />
+    </edge>
+    <edge source="controleurs.ControleurCRUDProduit" target="interface_class.I_Catalogue">
+      <point x="53.5" y="-15.5" />
+      <point x="1394.6068696999353" y="353.0" />
+      <point x="1649.2479166666667" y="353.0" />
+      <point x="-40.3125" y="15.5" />
+    </edge>
+    <edge source="controleurs.ControleurGeneral" target="controleurs.ControleurCRUDProduit">
+      <point x="-65.99999999999994" y="-15.5" />
+      <point x="1573.6086676451407" y="484.0" />
+      <point x="1402.2497268427924" y="484.0" />
+      <point x="61.14285714285711" y="15.5" />
+    </edge>
+    <edge source="DAO.CatalogueDAO" target="DAO.I_CatalogueDAO">
+      <point x="0.0" y="-15.5" />
+      <point x="596.375" y="182.0" />
+      <point x="574.6308137638619" y="182.0" />
+      <point x="40.5" y="15.5" />
+    </edge>
+    <edge source="fenetres.FenetreNouveauProduit" target="controleurs.ControleurCRUDProduit">
+      <point x="53.75" y="-15.5" />
+      <point x="1133.6125" y="494.0" />
+      <point x="1279.9640125570781" y="494.0" />
+      <point x="-61.14285714285711" y="15.5" />
+    </edge>
+    <edge source="DAO.I_Factory" target="DAO.I_ProduitDAO">
+      <point x="27.5" y="-15.5" />
+      <point x="1049.0860241356818" y="172.0" />
+      <point x="992.5985241356818" y="172.0" />
+      <point x="36.0" y="15.5" />
+    </edge>
+    <edge source="DAO.ProduitDAO_XML" target="interface_class.Produit">
+      <point x="42.5" y="-15.5" />
+      <point x="404.44331376386185" y="373.0" />
+      <point x="704.375" y="373.0" />
+      <point x="-37.5" y="15.5" />
+    </edge>
+    <edge source="DAO.SQLFactory" target="DAO.I_Factory">
+      <point x="50.799999999999955" y="-15.5" />
+      <point x="871.9068696999352" y="504.0" />
+      <point x="909.4625000000001" y="504.0" />
+      <point x="909.4625000000001" y="343.0" />
+      <point x="987.2110241356818" y="343.0" />
+      <point x="-34.375" y="15.5" />
+    </edge>
+    <edge source="controleurs.ControleurGeneral" target="DAO.I_Factory">
+      <point x="-36.66666666666663" y="-15.5" />
+      <point x="1602.942000978474" y="464.0" />
+      <point x="1458.6068696999353" y="464.0" />
+      <point x="1458.6068696999353" y="333.0" />
+      <point x="1042.2110241356818" y="333.0" />
+      <point x="20.625" y="15.5" />
+    </edge>
+    <edge source="DAO.ProduitDAO" target="interface_class.Produit">
+      <point x="-16.625" y="-15.5" />
+      <point x="777.4375" y="373.0" />
+      <point x="754.375" y="373.0" />
+      <point x="12.5" y="15.5" />
+    </edge>
+    <edge source="fenetres.FenetreVente" target="controleurs.ControleurAchatVenteProduit">
+      <point x="35.5" y="-15.5" />
+      <point x="2225.269520547946" y="484.0" />
+      <point x="2102.733806262231" y="484.0" />
+      <point x="109.71428571428578" y="15.5" />
+    </edge>
+    <edge source="interface_class.Produit" target="interface_class.I_Produit">
+      <point x="0.0" y="-15.5" />
+      <point x="741.875" y="81.0" />
+      <point x="860.2083333333333" y="81.0" />
+      <point x="-24.666666666666742" y="15.5" />
+    </edge>
+    <edge source="controleurs.ControleurGeneral" target="interface_class.Catalogue">
+      <point x="-22.0" y="-15.5" />
+      <point x="1617.6086676451407" y="454.0" />
+      <point x="1528.1068696999353" y="454.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="interface_class.Catalogue" target="DAO.I_Factory">
+      <point x="-36.875" y="-15.5" />
+      <point x="1491.2318696999353" y="303.0" />
+      <point x="1055.9610241356818" y="303.0" />
+      <point x="34.375" y="15.5" />
+    </edge>
+    <edge source="DAO.SQLFactory" target="DAO.CatalogueDAO">
+      <point x="-25.40000000000009" y="-15.5" />
+      <point x="795.7068696999352" y="464.0" />
+      <point x="596.375" y="464.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="interface_class.Catalogue" target="interface_class.Produit">
+      <point x="-51.625" y="-15.5" />
+      <point x="1476.4818696999353" y="313.0" />
+      <point x="779.375" y="313.0" />
+      <point x="37.5" y="15.5" />
+    </edge>
+    <edge source="fenetres.FenetreAcceuil" target="controleurs.ControleurCatalogue">
+      <point x="0.0" y="-15.5" />
+      <point x="48.25" y="15.5" />
+    </edge>
+    <edge source="DAO.XMLFactory" target="DAO.I_Factory">
+      <point x="51.59999999999991" y="-15.5" />
+      <point x="429.7818696999352" y="605.0" />
+      <point x="488.37500000000006" y="605.0" />
+      <point x="488.37500000000006" y="484.0" />
+      <point x="871.0625" y="484.0" />
+      <point x="871.0625" y="333.0" />
+      <point x="973.4610241356818" y="333.0" />
+      <point x="-48.125" y="15.5" />
+    </edge>
+    <edge source="DAO.SQLFactory" target="DAO.ProduitDAO">
+      <point x="0.0" y="-15.5" />
+      <point x="821.1068696999353" y="454.0" />
+      <point x="794.0625" y="454.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="fenetres.FenetrePrincipale" target="fenetres.FenetreNouveauProduit">
+      <point x="-52.8125" y="-15.5" />
+      <point x="1586.7961676451407" y="595.0" />
+      <point x="1079.8625" y="595.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="DAO.SQLFactory" target="DAO.I_CatalogueDAO">
+      <point x="-50.799999999999955" y="-15.5" />
+      <point x="770.3068696999353" y="474.0" />
+      <point x="510.37500000000006" y="474.0" />
+      <point x="510.37500000000006" y="182.0" />
+      <point x="547.6308137638619" y="182.0" />
+      <point x="13.5" y="15.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.3884536082474227" x="1192.5" y="688.1342887473461" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
