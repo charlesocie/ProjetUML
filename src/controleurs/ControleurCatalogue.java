@@ -36,4 +36,8 @@ public class ControleurCatalogue {
     public int getidCat(String nom) {
         return listCat.getid(nom);
     }
+
+    public I_Factory getFactory() {
+        return factory;
+    }
 }

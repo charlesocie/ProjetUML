@@ -1,5 +1,6 @@
 package controleurs;
 
+import DAO.I_Factory;
 import interface_class.Catalogue;
 import interface_class.I_Catalogue;
 
@@ -9,9 +10,9 @@ public class ControleurGeneral {
 	private ControleurCRUDProduit CCRUDP;
 	private ControleurEtatStock CES;
 	
-	public ControleurGeneral(String nom, int id){
+	public ControleurGeneral(String nom, int id, I_Factory factory){
 		
-		I_Catalogue cat = new Catalogue(nom);
+		I_Catalogue cat = new Catalogue(nom, factory);
 		cat.setId(id);
 		setCAVP(new ControleurAchatVenteProduit(cat));
 		setCCRUDP(new ControleurCRUDProduit(cat));

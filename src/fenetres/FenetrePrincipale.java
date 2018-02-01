@@ -4,6 +4,7 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
+import DAO.I_Factory;
 import controleurs.ControleurCatalogue;
 import controleurs.ControleurGeneral;
 
@@ -23,9 +24,9 @@ public class FenetrePrincipale extends JFrame implements ActionListener,
 	private JButton btQuitter;
 
 	
-	public FenetrePrincipale(String nom, int id) {
+	public FenetrePrincipale(String nom, int id, I_Factory factory) {
 
-		this.CG = new ControleurGeneral(nom, id);
+		this.CG = new ControleurGeneral(nom, id, factory);
 		setTitle("exercice Produits");
 		setBounds(500, 500, 320, 250);
 		JPanel panAffichage = new JPanel();

@@ -18,9 +18,9 @@ public class Catalogue implements I_Catalogue {
 	private I_Factory factory;
 	private I_ProduitDAO c;
 
-	public Catalogue(String nom) {
+	public Catalogue(String nom, I_Factory factory) {
 		this.nom = nom;
-		factory = SQLFactory.getInstance();
+		//factory = SQLFactory.getInstance();
 		c = factory.createProduit();
         LoadCatalogue();
 	}

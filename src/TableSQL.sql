@@ -81,3 +81,6 @@ CREATE OR REPLACE TRIGGER trig_supp_prod_cat
     UPDATE CatalogueObjet SET nbproduit = v_nbprod-1
     WHERE idcat =:OLD.idcat;
   END;
+
+REVOKE INSERT ON ProduitObjet FROM PUBLIC;
+REVOKE INSERT ON CatalogueObjet FROM PUBLIC;

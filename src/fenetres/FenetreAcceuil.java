@@ -125,7 +125,7 @@ public class FenetreAcceuil extends JFrame implements ActionListener {
             String texteSelection = (String)cmbSelectionner.getSelectedItem();
             if (texteSelection != null)
             {
-                new FenetrePrincipale(texteSelection, CC.getidCat(texteSelection));
+                new FenetrePrincipale(texteSelection, CC.getidCat(texteSelection), CC.getFactory());
                 JOptionPane.showMessageDialog(null," ouverture du Catalogue " + texteSelection + " effectué");
                 this.dispose();
             }

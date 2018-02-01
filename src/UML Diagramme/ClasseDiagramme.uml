@@ -33,21 +33,27 @@
   </nodes>
   <notes />
   <edges>
+    <edge source="DAO.SQLFactory" target="DAO.I_Factory">
+      <point x="0.0" y="-15.5" />
+      <point x="599.5" y="213.0" />
+      <point x="553.0" y="213.0" />
+      <point x="27.5" y="15.5" />
+    </edge>
     <edge source="DAO.ProduitDAO" target="DAO.I_ProduitDAO">
       <point x="0.0" y="-15.5" />
       <point x="275.5" y="213.0" />
       <point x="221.0" y="213.0" />
       <point x="36.0" y="15.5" />
     </edge>
+    <edge source="interface_class.Catalogue" target="interface_class.I_Catalogue">
+      <point x="0.0" y="-15.5" />
+      <point x="0.0" y="15.5" />
+    </edge>
     <edge source="DAO.ProduitDAOAdapter" target="DAO.I_ProduitDAO">
       <point x="0.0" y="-15.5" />
       <point x="94.5" y="213.0" />
       <point x="149.0" y="213.0" />
       <point x="-36.0" y="15.5" />
-    </edge>
-    <edge source="interface_class.Catalogue" target="interface_class.I_Catalogue">
-      <point x="0.0" y="-15.5" />
-      <point x="0.0" y="15.5" />
     </edge>
     <edge source="DAO.CatalogueDAOAdapteur" target="DAO.I_CatalogueDAO">
       <point x="0.0" y="-15.5" />
@@ -61,24 +67,18 @@
       <point x="136.75" y="56.0" />
       <point x="-40.5" y="15.5" />
     </edge>
-    <edge source="DAO.SQLFactory" target="DAO.I_Factory">
-      <point x="0.0" y="-15.5" />
-      <point x="599.5" y="213.0" />
-      <point x="553.0" y="213.0" />
-      <point x="27.5" y="15.5" />
-    </edge>
-    <edge source="interface_class.Produit" target="interface_class.I_Produit">
-      <point x="0.0" y="-15.5" />
-      <point x="0.0" y="15.5" />
-    </edge>
     <edge source="DAO.XMLFactory" target="DAO.I_Factory">
       <point x="0.0" y="-15.5" />
       <point x="451.5" y="213.0" />
       <point x="498.0" y="213.0" />
       <point x="-27.5" y="15.5" />
     </edge>
+    <edge source="interface_class.Produit" target="interface_class.I_Produit">
+      <point x="0.0" y="-15.5" />
+      <point x="0.0" y="15.5" />
+    </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.4798206278026906" x="983.5" y="353.27570093457945" />
+  <settings layout="Hierarchic Group" zoom="0.4798206278026906" x="471.6168224299065" y="353.0" />
   <SelectedNodes />
   <Categories />
   <SCOPE>All</SCOPE>
