@@ -135,9 +135,7 @@ public class Catalogue implements I_Catalogue {
 		}
 		catch(Exception e) {
 			System.out.println(e);
-			/*jop1 = new JOptionPane();
-			jop1.showMessageDialog(null, "Message informatif", "Information", JOptionPane.INFORMATION_MESSAGE);
-			*/return false;
+			return false;
 		}
 	}
 
@@ -184,9 +182,7 @@ public class Catalogue implements I_Catalogue {
 		}
 		catch(Exception e) {
 			System.out.println(e);
-			/*jop1 = new JOptionPane();
-			jop1.showMessageDialog(null, "Message informatif", "Information", JOptionPane.INFORMATION_MESSAGE);
-			*/return false;
+			return false;
 		}
 	}
 
@@ -204,9 +200,7 @@ public class Catalogue implements I_Catalogue {
 		}
 		catch(Exception e) {
 			System.out.println(e);
-			/*jop1 = new JOptionPane();
-			jop1.showMessageDialog(null, "Message informatif", "Information", JOptionPane.INFORMATION_MESSAGE);
-			*/return null;
+			return null;
 		}
 	}
 
@@ -222,9 +216,7 @@ public class Catalogue implements I_Catalogue {
 		}
 		catch(Exception e) {
 			System.out.println(e);
-			/*jop1 = new JOptionPane();
-			jop1.showMessageDialog(null, "Message informatif", "Information", JOptionPane.INFORMATION_MESSAGE);
-			*/return 0;
+			return 0;
 		}
 	}
 	

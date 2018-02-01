@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import DAO.ProduitDAO;
+import DAO.ProduitFactory;
 import interface_class.Catalogue;
 import interface_class.I_Catalogue;
 import interface_class.I_Produit;
@@ -24,7 +25,25 @@ public class CatalogueTest2 {
 //		Si votre Catalogue est un Singleton, il faut changer la ligne précédente puis vider le Catalogue avec la méthode clear() comme indiqué à la ligne suivante
 		cat.clear();
 	}
-	
+
+	@Test
+	public void testConstructeurCatalogueI_produit() {
+		I_Produit p1 = createProduit("Mars", 10, 1);
+		I_Catalogue catalogue = new Catalogue(p1);
+		assertNotNull("créer catalogue", catalogue);
+	}
+
+	@Test
+	public void testConstructeurCatalogueI_produittab() {
+		I_Produit p1 = createProduit("Mars", 10, 1);
+		I_Produit p2 = createProduit("Twix", 10, 1);
+		I_Produit prod[] = new I_Produit[2];
+		prod[0]= p1;
+		prod[1]= p2;
+		I_Catalogue catalogue = new Catalogue(prod);
+		assertNotNull("créer catalogue", catalogue);
+	}
+
 	@Test
 	public void testConstructeurCatalogue() {
 		assertNotNull("créer catalogue", cat);
